@@ -1,0 +1,14 @@
+ul{
+    margin-top: 30px;
+}
+.cons{
+    background-color:rgba(100,100, 100, 0.4);
+    margin-top: 15%;
+    height: 700px;
+}
+.cardcontainer{
+    border-radius: 4px;
+    background-color: blueviolet;
+    opacity: 8;
+    box-shadow: 2px;
+}
