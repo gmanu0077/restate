@@ -1,14 +1,45 @@
 ul{
+   align-content: right;
     margin-top: 30px;
+    list-style: none;
 }
-.cons{
-    background-color:rgba(100,100, 100, 0.4);
-    margin-top: 15%;
-    height: 700px;
+.card{
+    margin-top: 8%;
+    height:fit-content;
 }
+
 .cardcontainer{
+    display: inline-flex; 
+  margin: 20px;
+  width: 250px;
+  padding: 10px;
     border-radius: 4px;
-    background-color: blueviolet;
-    opacity: 8;
-    box-shadow: 2px;
+    opacity: 7;
+    box-shadow: 0px 5px 10px 0px rgb(124, 7, 112);
+height: fit-content;
+    
+    
+}
+.bookmark{
+    margin-top: 10%;
+    margin-left: 45%;
+
+}
+
+.cardcontainer img{
+    margin-left: 0;
+    border-radius: 4px;
+    position: relative;
+}
+.cardcontainer button{
+    margin: 4px;
+    padding: 4px;
+    z-index: 3;
+   margin-top: 0;
+    position: absolute;
+    transition: background-color 0.5s ease-out;
+
+}
+.cardcontainer button:hover{
+    transform: scale(1.3);
 }

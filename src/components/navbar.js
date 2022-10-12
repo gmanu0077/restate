@@ -3,11 +3,11 @@ function Nav() {
   return (
     <div>
     <nav class="navbar">
-    <div class="navbar-container container">
+    <div class="navbar-container ">
         
         <ul class="menu-items">
-            <li><a href="#">Rent</a></li>
-            <li><a href="#">Buy</a></li>
+            <li><a href="/bookmark">Bookmark</a></li>
+            <li><a href="/">Home</a></li>
             <li><a href="#">Sell</a></li>
             <li><a href="#">Manage property</a></li>
             
