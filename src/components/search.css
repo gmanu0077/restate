@@ -4,14 +4,16 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-  
+
   }
   
   .search-container {
+    background-color: rgba(255, 255, 255,0.5);
+
     margin-top: 10%;
     height: 60px;
     padding: 10px;
-    box-shadow: 0px 5px 10px 0px #aaa;
+    box-shadow: 0px 5px 10px 0px rgb(190, 9, 121);
    width: max-content;
     display: flex;
     justify-content: center;

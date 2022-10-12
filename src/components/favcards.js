@@ -4,7 +4,7 @@ import './card.css'
 
 const FavHotel=()=>{
   let Hotels=JSON.parse(localStorage.getItem('book'))
-  const hotelcard=Hotels.length?(Hotels.map((re)=>
+  const hotelcard=Hotels?(Hotels?.map((re)=>
   
   {
  
@@ -38,7 +38,7 @@ const FavHotel=()=>{
     
    
 
- )):( <h5 >No available hotels</h5>
+ )):( <h2 class="bookmark">No Bookmarked hotels</h2>
  )
 
 
@@ -48,9 +48,10 @@ const FavHotel=()=>{
 
 return(
   <div className="card">
-  
+  <div className='fav'>
+  <h1 class="bookmark">BOOKMARK</h1>
 {hotelcard}
-  </div>
+  </div></div>
 
 )}
 export default FavHotel; 
