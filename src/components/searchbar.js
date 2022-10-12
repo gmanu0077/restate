@@ -24,21 +24,7 @@ export default function Search() {
     console.log(date,"date")
   };
 
-  const onSearchP = (searchTerm) => {
-    setprice(searchTerm);
-   
-    console.log("search ", searchTerm);
-  };
-  const onSearchT = (searchTerm) => {
-    settype(searchTerm);
- 
-    console.log("search ", searchTerm);
-  };
-  const onSearchL = (searchTerm) => {
-    setlocation(searchTerm);
- 
-    console.log("search ", searchTerm);
-  };
+
   const onSearchD = (searchTerm) => {
     setdate(searchTerm);
 

@@ -7,7 +7,7 @@ const Hotel=({hotels,location,price,type,date})=>{
   const value=[];
   const filteredHotels = hotels.filter(h => {
     if(location){
-        if (h.location != location){
+        if (h.location !== location){
             return false;
         }
     }
@@ -17,12 +17,12 @@ const Hotel=({hotels,location,price,type,date})=>{
         }
     }
     if(date){
-        if (h.date != date){
+        if (h.date !== date){
             return false;
         }
     }
     if(type){
-    if(h.type!=type)return false
+    if(h.type!==type)return false
   }
     return true;
 })
