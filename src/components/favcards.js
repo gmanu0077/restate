@@ -36,8 +36,8 @@ const FavHotel=()=>{
           <a className="btn-floating btn-large halfway-fab waves-effect waves-light red"><i className="material-icons">book</i></a>
         </div>
         <div className="card-content">
-          <h4>price: ${re.price}</h4>
-          <h4>location: {re.location}</h4>
+          <h4> ${re.price}</h4>
+          <p> {re.location}</p>
         </div>
       </div>
     </div>
@@ -54,8 +54,8 @@ const FavHotel=()=>{
     
    
 
- )):( <h2>No Bookmarked hotels</h2>
- )
+ )):( <h2 className="center">No Bookmarked hotels</h2>
+ ) 
 
 
 

@@ -10,7 +10,12 @@ ul{
     
 
 } */
-
+.no{
+    margin-left: 40%;
+}
+.card-content{
+    text-align: left;
+}
 .cardcontainer{
     display: inline-flex; 
   margin: 20px;

@@ -64,14 +64,23 @@ const Hotel=({hotels,location,price,type,date})=>{
           <img src={pic} />
           <span className="card-title">{re.name}</span>
           <a className="btn-floating btn-large halfway-fab waves-effect waves-light red" onClick={()=>{
-          value.push(re)
-          localStorage.setItem('book',JSON.stringify(value))
+         if(localStorage.getItem('book')){
+         const prev=JSON.parse(localStorage.getItem('book'))
+         
+         prev.push(re)
+         console.log(prev,"prev")
+          localStorage.setItem('book',JSON.stringify(prev))
            alert('bookmarked')
+          }else{
+            value.push(re)
+            localStorage.setItem('book',JSON.stringify(value))
+             alert('bookmarked')
+           }
          }}><i className="material-icons">book</i></a>
         </div>
         <div className="card-content">
-          <h4>price: ${re.price}</h4>
-          <h4>location: {re.location}</h4>
+          <h4> ${re.price}</h4>
+          <p> {re.location}</p>
         </div>
       </div>
     </div>
