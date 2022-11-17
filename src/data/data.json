@@ -1,24 +1,24 @@
 {
     "Hotels" :[
          {
-            "name":"ap1",
+            "name":"HOTEL1",
             "price":2500,
             "location":"new-york",
             "type":"house",
             "date":"2022-05-27"
          },
          {
-            "name":"ap2",
+            "name":"HOTEL2",
             "price":1500,
             "location":"california",
-            "type":"house",
+            "type":"floor",
             "date":"2022-05-29"
          },
          {
-            "name":"ap3",
+            "name":"HOTEL3",
             "price":3500,
             "location":"banglore",
-            "type":"house",
+            "type":"flats",
             "date":"2022-06-12"
          }
 ]

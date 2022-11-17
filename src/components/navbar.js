@@ -13,7 +13,7 @@ function Nav() {
             
             <li><a href="#">Resources</a></li>
         </ul>
-        <h1 class="logo">Estatery</h1>
+        <h1 class="brand-logo right pink-text logo">Estatery</h1>
     </div>
 </nav></div>
   );

@@ -35,8 +35,8 @@ const Hotel=({hotels,location,price,type,date})=>{
     
        
        return(
-        <div  className="cardcontainer"  >
-        <ul>
+        <div  >
+        {/* <ul>
           <li className='images'>
             <img src={pic} width="200px" />
             <button onClick={()=>{
@@ -55,7 +55,28 @@ const Hotel=({hotels,location,price,type,date})=>{
          
          
         
-          </ul>
+          </ul> */}
+          
+          <div className="row">
+    <div className="col s12 m12 l12">
+      <div className="card">
+        <div className="card-image">
+          <img src={pic} />
+          <span className="card-title">{re.name}</span>
+          <a className="btn-floating btn-large halfway-fab waves-effect waves-light red" onClick={()=>{
+          value.push(re)
+          localStorage.setItem('book',JSON.stringify(value))
+           alert('bookmarked')
+         }}><i className="material-icons">book</i></a>
+        </div>
+        <div className="card-content">
+          <h4>price: ${re.price}</h4>
+          <h4>location: {re.location}</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+
          
         </div>
       )
@@ -67,7 +88,7 @@ const Hotel=({hotels,location,price,type,date})=>{
     
    
 
- )):( <h5>No available hotels</h5>
+ )):( <h2>No available hotels</h2>
  )
 
 
@@ -76,7 +97,7 @@ const Hotel=({hotels,location,price,type,date})=>{
 
 
 return(
-  <div className="card">
+  <div className="cardcontainer">
    {hotelcard}
   </div>
 

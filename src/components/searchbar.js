@@ -41,17 +41,17 @@ export default function Search() {
   
 
       <div className="search-container">
-        <div className="search-inner">
+        <div className="search-inner white-text">
           
-          <input type="text" value={location} onChange={onChangeL} placeholder="location" />
+          <input className="white-text" type="text" value={location} onChange={onChangeL} placeholder="location" />
           {/* <button onClick={() => onSearchL(location)}> <i class="fa fa-search"></i></button> */}
-          <input type="number" value={price} onChange={onChangeP}  placeholder="max-price"/>
+          <input className="white-text" type="number" value={price} onChange={onChangeP}  placeholder="max-price"/>
           {/* <button onClick={() => onSearchP(price)}> <i class="fa fa-search"></i> </button> */}
          
-          <input type="text" value={type} onChange={onChangeT}  placeholder="property-type"/>
+          <input className="white-text" type="text" value={type} onChange={onChangeT}  placeholder="property-type"/>
           {/* <button onClick={() => onSearchT(type)}> <i class="fa fa-search"></i></button> */}
-          <input type="date" value={date} onChange={onChangeD}  placeholder="date"/>
-          <button onClick={() => onSearchD(date)}> <i class="fa fa-search"></i></button>
+          <input className="white-text" type="date" value={date} onChange={onChangeD}  placeholder="date"/>
+          <button className="btn pink" onClick={() => onSearchD(date)}> search</button>
         </div>
 
 

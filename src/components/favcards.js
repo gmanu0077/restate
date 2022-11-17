@@ -13,8 +13,8 @@ const FavHotel=()=>{
     
        
        return(
-        <div className="cardcontainer" >
-        <ul >
+        <div>
+        {/* <ul >
         <li>
             <img src={pic} width="200px" /></li>
             <li>
@@ -26,7 +26,23 @@ const FavHotel=()=>{
          
          
         
-          </ul>
+          </ul> */}
+           <div className="row">
+    <div className="col s12 m12 l12">
+      <div className="card">
+        <div className="card-image">
+          <img src={pic} />
+          <span className="card-title">{re.name}</span>
+          <a className="btn-floating btn-large halfway-fab waves-effect waves-light red"><i className="material-icons">book</i></a>
+        </div>
+        <div className="card-content">
+          <h4>price: ${re.price}</h4>
+          <h4>location: {re.location}</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+
          
         </div>
       )
@@ -38,7 +54,7 @@ const FavHotel=()=>{
     
    
 
- )):( <h2 class="bookmark">No Bookmarked hotels</h2>
+ )):( <h2>No Bookmarked hotels</h2>
  )
 
 
@@ -47,11 +63,12 @@ const FavHotel=()=>{
 
 
 return(
-  <div className="card">
-  <div className='fav'>
-  <h1 class="bookmark">BOOKMARK</h1>
+  
+  <div>
+  <h1 className="bookmark center pink-text">BOOKMARK</h1>
+  <div className="cardcontainer">
 {hotelcard}
-  </div></div>
-
+  </div>
+</div>
 )}
 export default FavHotel; 
