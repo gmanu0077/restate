@@ -5,7 +5,7 @@ function Home() {
     <div className="home">
       <Nav />
       <br></br>
-      <h1 className="center white-text">Properties to Rent</h1>
+      <h1 className="center white-text">Search properties to Rent</h1>
       <Search />
     </div>
   );

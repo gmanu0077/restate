@@ -3,21 +3,21 @@
     {
       "name": "HOTEL1",
       "price": 2500,
-      "location": "new-york",
+      "location": "New-york",
       "type": "Apartment",
       "date": "2022-05-27"
     },
     {
       "name": "HOTEL2",
       "price": 1500,
-      "location": "california",
+      "location": "California",
       "type": "Flat",
       "date": "2022-05-29"
     },
     {
       "name": "HOTEL3",
       "price": 3500,
-      "location": "banglore",
+      "location": "Banglore",
       "type": "Flat",
       "date": "2022-06-12"
     }

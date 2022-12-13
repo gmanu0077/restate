@@ -2,21 +2,28 @@ import React from "react";
 import pic from "./R.jpg";
 import "./card.css";
 
-const Hotel = ({ hotels, location, price, type, date }) => {
+const Hotel = ({ hotels, location, minprice, maxprice, type, date, flag, }) => {
   console.log(JSON.parse(localStorage.getItem("book")), "lc");
+  console.log(hotels, "hhh")
   const value = [];
   const filteredHotels = hotels.filter((h) => {
-    if (location) {
+
+    if (location && flag) {
       if (h.location !== location) {
         return false;
       }
     }
-    if (price) {
-      if (h.price > price) {
+    if (minprice && flag) {
+      if (h.price < minprice) {
         return false;
       }
     }
-    if (date) {
+    if (maxprice && flag) {
+      if (h.price > maxprice) {
+        return false;
+      }
+    }
+    if (date && flag) {
       if (h.date !== date) {
         return false;
       }
@@ -27,83 +34,75 @@ const Hotel = ({ hotels, location, price, type, date }) => {
     return true;
   });
   const hotelcard = filteredHotels.length ? (
-    filteredHotels.map((re) => {
-      return (
-        <div>
-          {/* <ul>
-          <li className='images'>
-            <img src={pic} width="200px" />
-            <button onClick={()=>{
-          value.push(re)
-          localStorage.setItem('book',JSON.stringify(value))
-           alert('bookmarked')
-         }}><i class='fa fa-bookmark'></i></button>
-          </li>
-          <li>
-         <h4 >price: ${re.price}</h4> </li>
-         <li>
-         <h4 >name: {re.name}</h4> </li>
-         <li>
-         <h4 >location: {re.location}</h4> </li>
-       
-         
-         
-        
-          </ul> */}
 
-          <div className="row">
-            <div className="col s12 m12 l12">
-              <div className="card">
-                <div className="card-image">
-                  <img src={pic} />
-                  <span className="card-title">{re.name}</span>
-                  <a
-                    className="btn-floating btn-large halfway-fab waves-effect waves-light red"
-                    onClick={() => {
-                      if (localStorage.getItem("book")) {
-                        var redundant = false;
-                        const prev = JSON.parse(localStorage.getItem("book"));
-                        console.log(prev, "prev");
-                        prev.map((pre) => {
-                          console.log(pre, "pre");
-                          if (pre.name === re.name) {
-                            redundant = true;
 
-                            return;
-                          }
-                        });
-                        if (!redundant) {
-                          prev.push(re);
-                          console.log(prev, "prev");
-                          localStorage.setItem("book", JSON.stringify(prev));
-                          alert("bookmarked");
-                        } else {
-                          alert("already bookmarked");
+
+
+    <div className="row">
+
+      {filteredHotels.map((re) => {
+        return (
+          <div className="col s12 m6 l4">
+            <div className="card">
+              <div className="card-image">
+                <img src={pic} />
+                <span className="card-title">{re.name}</span>
+                <a
+                  className="btn-floating btn-large halfway-fab waves-effect waves-light red"
+                  onClick={() => {
+                    if (localStorage.getItem("book")) {
+                      var redundant = false;
+                      const prev = JSON.parse(localStorage.getItem("book"));
+                      console.log(prev, "prev");
+                      prev.map((pre) => {
+                        console.log(pre, "pre");
+                        if (pre.name === re.name) {
+                          redundant = true;
+
+                          return;
                         }
-                      } else {
-                        value.push(re);
-                        localStorage.setItem("book", JSON.stringify(value));
+                      });
+                      if (!redundant) {
+                        prev.push(re);
+                        console.log(prev, "prev");
+                        localStorage.setItem("book", JSON.stringify(prev));
                         alert("bookmarked");
+                      } else {
+                        alert("already bookmarked");
                       }
-                    }}
-                  >
-                    <i className="material-icons">book</i>
-                  </a>
-                </div>
-                <div className="card-content">
-                  <h4> ${re.price}</h4>
-                  <p> {re.location}</p>
-                </div>
+                    } else {
+                      value.push(re);
+                      localStorage.setItem("book", JSON.stringify(value));
+                      alert("bookmarked");
+                    }
+                  }}
+                >
+                  <i className="material-icons">book</i>
+                </a>
               </div>
-            </div>
-          </div>
-        </div>
-      );
-    })
+              <div className="card-content">
+                <h4> ${re.price}</h4>
+                <p> {re.location}</p>
+              </div>
+            </div></div>
+        )
+      })
+      }
+
+    </div>
+
+
+
   ) : (
     <h2>No available hotels</h2>
   );
 
-  return <div className="cardcontainer">{hotelcard}</div>;
+  return (
+
+
+    <div className="cardcontainer">{hotelcard}
+    </div>
+
+  )
 };
 export default Hotel;

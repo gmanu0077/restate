@@ -5,10 +5,12 @@ import Hotel from "./card";
 
 export default function Search() {
   const [type, settype] = useState("");
-  const [price, setprice] = useState("");
+  const [minprice, setminprice] = useState("");
+  const [maxprice, setmaxprice] = useState("");
   const [date, setdate] = useState("");
   const [location, setlocation] = useState("");
   const [hoteldata, sethoteldata] = useState([]);
+  const [Flag, setFlag] = useState(false);
 
   const onChangeA = () => {
     settype("Apartment");
@@ -16,8 +18,11 @@ export default function Search() {
   const onChangeF = () => {
     settype("Flat");
   };
-  const onChangeP = (event) => {
-    setprice(event.target.value);
+  const onChangeminP = (event) => {
+    setminprice(event.target.value);
+  };
+  const onChangemaxP = (event) => {
+    setmaxprice(event.target.value);
   };
   const onChangeL = (event) => {
     setlocation(event.target.value);
@@ -27,10 +32,8 @@ export default function Search() {
     console.log(date, "date");
   };
 
-  const onSearchD = (searchTerm) => {
-    setdate(searchTerm);
-
-    console.log("search ", searchTerm.getDate());
+  const onSearchD = () => {
+    setFlag(true)
   };
   useEffect(() => {
     sethoteldata(dat.Hotels);
@@ -39,7 +42,8 @@ export default function Search() {
   console.log(hoteldata);
   return (
     <div className="search">
-      <div className="search-container">
+      <div className="search-container ">
+
         <div className="search-inner white-text">
           <input
             className="white-text"
@@ -48,17 +52,21 @@ export default function Search() {
             onChange={onChangeL}
             placeholder="location"
           />
-          {/* <button onClick={() => onSearchL(location)}> <i class="fa fa-search"></i></button> */}
           <input
             className="white-text"
             type="number"
-            value={price}
-            onChange={onChangeP}
+            value={minprice}
+            onChange={onChangeminP}
+            placeholder="min-price"
+          />
+          <input
+            className="white-text"
+            type="number"
+            value={maxprice}
+            onChange={onChangemaxP}
             placeholder="max-price"
           />
-          {/* <button onClick={() => onSearchP(price)}> <i class="fa fa-search"></i> </button> */}
 
-          {/* <input className="white-text" type="text" value={type} onChange={onChangeT}  placeholder="property-type"/> */}
           <p>Type:</p>
           <button className="btn-small red" onClick={() => onChangeA()}>
             Apartment
@@ -67,7 +75,6 @@ export default function Search() {
             flat
           </button>
 
-          {/* <button onClick={() => onSearchT(type)}> <i class="fa fa-search"></i></button> */}
           <input
             className="white-text"
             type="date"
@@ -75,7 +82,7 @@ export default function Search() {
             onChange={onChangeD}
             placeholder="date"
           />
-          <button className="btn pink" onClick={() => onSearchD(date)}>
+          <button className="btn pink" onClick={() => onSearchD()}>
             search
           </button>
         </div>
@@ -83,9 +90,11 @@ export default function Search() {
       <Hotel
         hotels={hoteldata}
         location={location}
-        price={price}
+        minprice={minprice}
+        maxprice={maxprice}
         date={date}
         type={type}
+        flag={Flag}
       />
     </div>
   );

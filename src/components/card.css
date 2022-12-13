@@ -1,35 +1,32 @@
-
-ul{
-   align-content: right;
+ul {
+    align-content: right;
     margin-top: 30px;
     list-style: none;
 }
-/* .card{
-    margin-top: 8%;
-    height:fit-content;
-    
 
-} */
-.no{
+.col {
+    display: flex;
+
+}
+
+
+
+.no {
     margin-left: 40%;
 }
-.card-content{
+
+.card-content {
     text-align: left;
 }
-.cardcontainer{
-    display: inline-flex; 
-  margin: 20px;
 
-  padding: 10px;
-    border-radius: 4px;
-    opacity: 7;
-    box-shadow: 0px 5px 10px 0px rgb(124, 7, 112);
-height: fit-content;
-    
-background-color: rgba(255, 255, 255,0.7);
+.cardcontainer {
+    margin: 20px;
+
+
+
 }
 
-.fav{
+.fav {
     width: 80%;
-   margin-left: 8%;
+    margin-left: 8%;
 }

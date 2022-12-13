@@ -1,4 +1,5 @@
-body{
+body {
     background-image: url('./components/bg.jpg');
     background-size: cover;
+    background-repeat: no-repeat;
 }

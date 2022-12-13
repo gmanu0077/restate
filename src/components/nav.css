@@ -28,10 +28,11 @@
   order: 2;
   display: flex;
 }
+
 .logo {
   order: 1;
   font-size: 2.3rem;
-  margin-bottom: 3.5%;
+  margin-bottom: 4%;
 }
 
 .menu-items li {
