@@ -1,10 +1,12 @@
-import Search from '../components/searchbar';
-import Nav from '../components/navbar';
+import Search from "../components/searchbar";
+import Nav from "../components/navbar";
 function Home() {
   return (
     <div className="home">
-     <Nav/>
-    <Search/>
+      <Nav />
+      <br></br>
+      <h1 className="center white-text">Properties to Rent</h1>
+      <Search />
     </div>
   );
 }
