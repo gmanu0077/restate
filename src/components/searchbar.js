@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import dat from '../data/data.json'
+import dat from "../data/data.json";
 import "./search.css";
 import Hotel from "./card";
 
@@ -10,53 +10,83 @@ export default function Search() {
   const [location, setlocation] = useState("");
   const [hoteldata, sethoteldata] = useState([]);
 
-  const onChangeT = (event) => {
-    settype(event.target.value); 
+  const onChangeA = () => {
+    settype("Apartment");
+  };
+  const onChangeF = () => {
+    settype("Flat");
   };
   const onChangeP = (event) => {
-    setprice(event.target.value); 
+    setprice(event.target.value);
   };
   const onChangeL = (event) => {
-    setlocation(event.target.value); 
+    setlocation(event.target.value);
   };
   const onChangeD = (event) => {
-    setdate(event.target.value); 
-    console.log(date,"date")
+    setdate(event.target.value);
+    console.log(date, "date");
   };
-
 
   const onSearchD = (searchTerm) => {
     setdate(searchTerm);
 
-
     console.log("search ", searchTerm.getDate());
   };
-  useEffect(() => { 
-    sethoteldata(dat.Hotels)
+  useEffect(() => {
+    sethoteldata(dat.Hotels);
   }, []);
 
-  console.log(hoteldata)
+  console.log(hoteldata);
   return (
     <div className="search">
-  
-
       <div className="search-container">
         <div className="search-inner white-text">
-          
-          <input className="white-text" type="text" value={location} onChange={onChangeL} placeholder="location" />
+          <input
+            className="white-text"
+            type="text"
+            value={location}
+            onChange={onChangeL}
+            placeholder="location"
+          />
           {/* <button onClick={() => onSearchL(location)}> <i class="fa fa-search"></i></button> */}
-          <input className="white-text" type="number" value={price} onChange={onChangeP}  placeholder="max-price"/>
+          <input
+            className="white-text"
+            type="number"
+            value={price}
+            onChange={onChangeP}
+            placeholder="max-price"
+          />
           {/* <button onClick={() => onSearchP(price)}> <i class="fa fa-search"></i> </button> */}
-         
-          <input className="white-text" type="text" value={type} onChange={onChangeT}  placeholder="property-type"/>
+
+          {/* <input className="white-text" type="text" value={type} onChange={onChangeT}  placeholder="property-type"/> */}
+          <p>Type:</p>
+          <button className="btn-small red" onClick={() => onChangeA()}>
+            Apartment
+          </button>
+          <button className="btn-small green" onClick={() => onChangeF()}>
+            flat
+          </button>
+
           {/* <button onClick={() => onSearchT(type)}> <i class="fa fa-search"></i></button> */}
-          <input className="white-text" type="date" value={date} onChange={onChangeD}  placeholder="date"/>
-          <button className="btn pink" onClick={() => onSearchD(date)}> search</button>
+          <input
+            className="white-text"
+            type="date"
+            value={date}
+            onChange={onChangeD}
+            placeholder="date"
+          />
+          <button className="btn pink" onClick={() => onSearchD(date)}>
+            search
+          </button>
         </div>
-
-
       </div>
-      <Hotel hotels={hoteldata} location={location} price={price} date={date} type={type} />
+      <Hotel
+        hotels={hoteldata}
+        location={location}
+        price={price}
+        date={date}
+        type={type}
+      />
     </div>
   );
 }

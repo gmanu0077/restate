@@ -1,25 +1,25 @@
 {
-    "Hotels" :[
-         {
-            "name":"HOTEL1",
-            "price":2500,
-            "location":"new-york",
-            "type":"house",
-            "date":"2022-05-27"
-         },
-         {
-            "name":"HOTEL2",
-            "price":1500,
-            "location":"california",
-            "type":"floor",
-            "date":"2022-05-29"
-         },
-         {
-            "name":"HOTEL3",
-            "price":3500,
-            "location":"banglore",
-            "type":"flats",
-            "date":"2022-06-12"
-         }
-]
+  "Hotels": [
+    {
+      "name": "HOTEL1",
+      "price": 2500,
+      "location": "new-york",
+      "type": "Apartment",
+      "date": "2022-05-27"
+    },
+    {
+      "name": "HOTEL2",
+      "price": 1500,
+      "location": "california",
+      "type": "Flat",
+      "date": "2022-05-29"
+    },
+    {
+      "name": "HOTEL3",
+      "price": 3500,
+      "location": "banglore",
+      "type": "Flat",
+      "date": "2022-06-12"
+    }
+  ]
 }
